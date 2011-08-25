@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIDevice.h>
 
 
 @interface UIDevice (IdentifierAddition)
@@ -29,5 +30,8 @@
  */
 
 - (NSString *) uniqueGlobalDeviceIdentifier;
+
+- (NSString *)uniqueDeviceSHAIdentifier:(int)version;
+- (NSString *)uniqueGlobalDeviceSHAIdentifier:(int)version;
 
 @end

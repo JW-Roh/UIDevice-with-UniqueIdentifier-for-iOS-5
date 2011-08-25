@@ -8,6 +8,7 @@
 
 #import "UIDevice+IdentifierAddition.h"
 #import "NSString+MD5Addition.h"
+#import "NSString+SHAAddition.h"
 
 #include <sys/socket.h> // Per msqr
 #include <sys/sysctl.h>
@@ -91,6 +92,61 @@
 - (NSString *) uniqueGlobalDeviceIdentifier{
     NSString *macaddress = [[UIDevice currentDevice] macaddress];
     NSString *uniqueIdentifier = [macaddress stringFromMD5];
+    
+    return uniqueIdentifier;
+}
+
+- (NSString *)uniqueDeviceSHAIdentifier:(int)version {
+    NSString *macaddress = [[UIDevice currentDevice] macaddress];
+    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+    
+    NSString *stringToHash = [NSString stringWithFormat:@"%@%@",macaddress,bundleIdentifier];
+    NSString *uniqueIdentifier = nil;
+	
+	switch (version) {
+		case 224:
+			uniqueIdentifier = [stringToHash stringFromSHA224];
+			break;
+		case 256:
+			uniqueIdentifier = [stringToHash stringFromSHA256];
+			break;
+		case 384:
+			uniqueIdentifier = [stringToHash stringFromSHA384];
+			break;
+		case 512:
+			uniqueIdentifier = [stringToHash stringFromSHA512];
+			break;
+		case 1:
+		default:
+			uniqueIdentifier = [stringToHash stringFromSHA1];
+			break;
+	}
+    
+    return uniqueIdentifier;
+}
+
+- (NSString *)uniqueGlobalDeviceSHAIdentifier:(int)version {
+    NSString *macaddress = [[UIDevice currentDevice] macaddress];
+    NSString *uniqueIdentifier = nil;
+	
+	switch (version) {
+		case 224:
+			uniqueIdentifier = [macaddress stringFromSHA224];
+			break;
+		case 256:
+			uniqueIdentifier = [macaddress stringFromSHA256];
+			break;
+		case 384:
+			uniqueIdentifier = [macaddress stringFromSHA384];
+			break;
+		case 512:
+			uniqueIdentifier = [macaddress stringFromSHA512];
+			break;
+		case 1:
+		default:
+			uniqueIdentifier = [macaddress stringFromSHA1];
+			break;
+	}
     
     return uniqueIdentifier;
 }

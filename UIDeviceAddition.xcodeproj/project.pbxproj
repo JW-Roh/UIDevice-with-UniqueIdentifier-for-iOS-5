@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AF2D3FF140568D40099DC67 /* NSString+SHAAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2D3FE140568D40099DC67 /* NSString+SHAAddition.m */; };
 		C1E8503213FFA4C300B38510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E8503113FFA4C300B38510 /* UIKit.framework */; };
 		C1E8503413FFA4C300B38510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E8503313FFA4C300B38510 /* Foundation.framework */; };
 		C1E8503613FFA4C300B38510 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E8503513FFA4C300B38510 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AF2D3FD140568D40099DC67 /* NSString+SHAAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SHAAddition.h"; path = "Classes/NSString+SHAAddition.h"; sourceTree = "<group>"; };
+		1AF2D3FE140568D40099DC67 /* NSString+SHAAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SHAAddition.m"; path = "Classes/NSString+SHAAddition.m"; sourceTree = "<group>"; };
 		C1E8502D13FFA4C300B38510 /* UIDeviceAddition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIDeviceAddition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E8503113FFA4C300B38510 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C1E8503313FFA4C300B38510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				C1E8505313FFA51200B38510 /* UIDevice+IdentifierAddition.m */,
 				C1E8506113FFAB5D00B38510 /* NSString+MD5Addition.h */,
 				C1E8506213FFAB5D00B38510 /* NSString+MD5Addition.m */,
+				1AF2D3FD140568D40099DC67 /* NSString+SHAAddition.h */,
+				1AF2D3FE140568D40099DC67 /* NSString+SHAAddition.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				C1E8504813FFA4C300B38510 /* UIDeviceAdditionViewController.m in Sources */,
 				C1E8505413FFA51200B38510 /* UIDevice+IdentifierAddition.m in Sources */,
 				C1E8506313FFAB5D00B38510 /* NSString+MD5Addition.m in Sources */,
+				1AF2D3FF140568D40099DC67 /* NSString+SHAAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
